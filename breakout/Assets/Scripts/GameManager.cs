@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    int playerHealth;
+    [SerializeField] int playerHealth;
     [SerializeField] int score;
     int level;
 
@@ -38,6 +38,12 @@ public class GameManager : MonoBehaviour
     public void HitBrick(BrickLogic brick)
     {
         this.score += brick.GetPoints();
+    }
+
+    public void TakeDamage()
+    {
+        this.playerHealth--;
+        FindObjectOfType<Ball>().Start();
     }
 
 }

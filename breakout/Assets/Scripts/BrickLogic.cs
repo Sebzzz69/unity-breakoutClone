@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using UnityEngine;
 
 public class BrickLogic : MonoBehaviour
@@ -49,10 +50,11 @@ public class BrickLogic : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ball"))
         {
+            FindObjectOfType<GameManager>().HitBrick(this);
             currentHealth--;
             Hit();
-            FindObjectOfType<GameManager>().HitBrick(this);
         }
+
     }
 
     public int GetPoints()

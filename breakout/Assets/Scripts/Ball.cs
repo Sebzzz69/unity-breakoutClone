@@ -14,19 +14,21 @@ public class Ball : MonoBehaviour
         this.rb = GetComponent<Rigidbody2D>();
     }
 
-    private void Start()
+    public void Start()
     {
+        rb.velocity = Vector3.zero;
+        this.transform.position = new Vector2(0, -1f);
         Invoke(nameof(SetRandomTrajectory), 1);
     }
 
-    void SetRandomTrajectory()
+    private void SetRandomTrajectory()
     {
         Vector2 direction = Vector2.zero;
         direction.x = Random.Range(-1f, 1f);
         direction.y = -1f;
 
         this.rb.AddForce(direction.normalized * this.speed);
-    }
+    } 
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -34,6 +36,11 @@ public class Ball : MonoBehaviour
         {
             Vector2 direction = Vector2.zero;
             direction.x = Random.Range(-1f, 1);
+        }
+
+        if (collision.gameObject.CompareTag("WallOfDeath"))
+        {
+            FindObjectOfType<GameManager>().TakeDamage();
         }
     }
 
