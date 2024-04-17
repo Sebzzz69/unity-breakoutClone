@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7265849264393064670}
   - component: {fileID: 3389965639735114950}
   - component: {fileID: 1365103280925350099}
+  - component: {fileID: 473183825680268327}
   m_Layer: 0
   m_Name: Brick
   m_TagString: Untagged
@@ -102,3 +103,38 @@ MonoBehaviour:
   - {fileID: 21300000, guid: ae5156ff51b671344acc24048188b985, type: 3}
   - {fileID: 21300000, guid: 46f4791483e3b9e48aed4312feef0888, type: 3}
   - {fileID: 21300000, guid: a55f59206fe49634ca262b41c378f350, type: 3}
+--- !u!58 &473183825680268327
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3196737277012728797}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.0034941833, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.43610564

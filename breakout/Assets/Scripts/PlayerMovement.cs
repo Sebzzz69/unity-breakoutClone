@@ -18,7 +18,6 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(-((screenSize * 2) - this.gameObject.transform.localScale.x));
 
         // Get input from arrow keys or A/D keys
         float moveInput = Input.GetAxis("Horizontal");
