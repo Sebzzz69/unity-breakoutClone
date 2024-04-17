@@ -9,7 +9,7 @@ public class BrickLogic : MonoBehaviour
 
     SpriteRenderer spriteRenderer;
 
-    [SerializeField] Material[] material;
+    [SerializeField] Sprite[] state;
 
     private void Start()
     {
@@ -22,20 +22,20 @@ public class BrickLogic : MonoBehaviour
     {
         switch (currentHealth)
         {
-            case 3:
-                spriteRenderer.material = material[0];
+            case 1:
+                spriteRenderer.sprite = state[0];
                 break;
 
             case 2:
-                spriteRenderer.material = material[1];
+                spriteRenderer.sprite = state[1];
                 break;
 
-            case 1:
-                spriteRenderer.material = material[2];
+            case 3:
+                spriteRenderer.sprite = state[2];
                 break;
 
             default:
-                spriteRenderer.material = null;
+                spriteRenderer.sprite = null;
                 break;
 
         }
