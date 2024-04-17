@@ -30,7 +30,7 @@ public class PlayerMovement : MonoBehaviour
         Vector3 newPosition = transform.position + new Vector3(moveAmount, 0f, 0f);
 
         // Clamp the new position to prevent the paddle from going out of the screen
-        newPosition.x = Mathf.Clamp(newPosition.x, -((screenSize * 2) - (this.gameObject.transform.localScale.x * 1.5f)), (screenSize * 2) - (this.gameObject.transform.localScale.x * 1.5f)); // Adjust these values according to your game's boundaries
+        newPosition.x = Mathf.Clamp(newPosition.x, -((screenSize * 2) - (this.gameObject.transform.localScale.x)), (screenSize * 2) - (this.gameObject.transform.localScale.x)); // Adjust these values according to your game's boundaries
 
         // Apply the new position to the paddle
         transform.position = newPosition;
