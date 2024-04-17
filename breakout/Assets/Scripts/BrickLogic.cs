@@ -6,10 +6,11 @@ public class BrickLogic : MonoBehaviour
 {
     const int maxHealth = 3;
     [SerializeField] int currentHealth;
+    int points;
 
     SpriteRenderer spriteRenderer;
 
-    [SerializeField] Material[] material;
+    [SerializeField] Sprite[] state;
 
     private void Start()
     {
@@ -18,35 +19,45 @@ public class BrickLogic : MonoBehaviour
         currentHealth = maxHealth;
     }
 
-    private void Update()
+    void Hit()
     {
         switch (currentHealth)
         {
-            case 3:
-                spriteRenderer.material = material[0];
+            case 1:
+                points = 100;
+                spriteRenderer.sprite = state[0];
                 break;
 
             case 2:
-                spriteRenderer.material = material[1];
+                points = 150;
+                spriteRenderer.sprite = state[1];
                 break;
 
-            case 1:
-                spriteRenderer.material = material[2];
+            case 3:
+                points = 200;
+                spriteRenderer.sprite = state[2];
                 break;
 
             default:
-                spriteRenderer.material = null;
+                Destroy(this.gameObject);
                 break;
 
         }
     }
-
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Ball"))
         {
             currentHealth--;
+            Hit();
+            FindObjectOfType<GameManager>().HitBrick(this);
         }
     }
+
+    public int GetPoints()
+    {
+        return this.points;
+    }
+
 }
