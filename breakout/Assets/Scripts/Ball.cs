@@ -25,7 +25,7 @@ public class Ball : MonoBehaviour
     {
         Vector2 direction = Vector2.zero;
         direction.x = Random.Range(-1f, 1f);
-        direction.y = -1f;
+        direction.y = 1f;
 
         this.rb.AddForce(direction.normalized * this.speed);
     } 
