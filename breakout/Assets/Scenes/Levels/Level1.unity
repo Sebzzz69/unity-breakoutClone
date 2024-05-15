@@ -131,6 +131,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 942726032}
     m_Modifications:
+    - target: {fileID: 1678514017768921817, guid: 6b97e5e4cd6b19640a75b40fec4a64de, type: 3}
+      propertyPath: powerUpPrefab
+      value: 
+      objectReference: {fileID: 5565206971344074104, guid: 9c9b276eb36c7554a99dace03f1c45f8, type: 3}
     - target: {fileID: 3196737277012728797, guid: 6b97e5e4cd6b19640a75b40fec4a64de, type: 3}
       propertyPath: m_Name
       value: Brick (10)
@@ -272,6 +276,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 431596365}
     m_Modifications:
+    - target: {fileID: 1678514017768921817, guid: 6b97e5e4cd6b19640a75b40fec4a64de, type: 3}
+      propertyPath: powerUpPrefab
+      value: 
+      objectReference: {fileID: 5565206971344074104, guid: 9c9b276eb36c7554a99dace03f1c45f8, type: 3}
     - target: {fileID: 3196737277012728797, guid: 6b97e5e4cd6b19640a75b40fec4a64de, type: 3}
       propertyPath: m_Name
       value: Brick (4)
@@ -413,6 +421,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 942726032}
     m_Modifications:
+    - target: {fileID: 1678514017768921817, guid: 6b97e5e4cd6b19640a75b40fec4a64de, type: 3}
+      propertyPath: powerUpPrefab
+      value: 
+      objectReference: {fileID: 5565206971344074104, guid: 9c9b276eb36c7554a99dace03f1c45f8, type: 3}
     - target: {fileID: 3196737277012728797, guid: 6b97e5e4cd6b19640a75b40fec4a64de, type: 3}
       propertyPath: m_Name
       value: Brick (8)
@@ -620,6 +632,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 942726032}
     m_Modifications:
+    - target: {fileID: 1678514017768921817, guid: 6b97e5e4cd6b19640a75b40fec4a64de, type: 3}
+      propertyPath: powerUpPrefab
+      value: 
+      objectReference: {fileID: 5565206971344074104, guid: 9c9b276eb36c7554a99dace03f1c45f8, type: 3}
     - target: {fileID: 3196737277012728797, guid: 6b97e5e4cd6b19640a75b40fec4a64de, type: 3}
       propertyPath: m_Name
       value: Brick (11)
@@ -682,6 +698,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 942726032}
     m_Modifications:
+    - target: {fileID: 1678514017768921817, guid: 6b97e5e4cd6b19640a75b40fec4a64de, type: 3}
+      propertyPath: powerUpPrefab
+      value: 
+      objectReference: {fileID: 5565206971344074104, guid: 9c9b276eb36c7554a99dace03f1c45f8, type: 3}
     - target: {fileID: 3196737277012728797, guid: 6b97e5e4cd6b19640a75b40fec4a64de, type: 3}
       propertyPath: m_Name
       value: Brick (7)
@@ -744,6 +764,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 431596365}
     m_Modifications:
+    - target: {fileID: 1678514017768921817, guid: 6b97e5e4cd6b19640a75b40fec4a64de, type: 3}
+      propertyPath: powerUpPrefab
+      value: 
+      objectReference: {fileID: 5565206971344074104, guid: 9c9b276eb36c7554a99dace03f1c45f8, type: 3}
     - target: {fileID: 3196737277012728797, guid: 6b97e5e4cd6b19640a75b40fec4a64de, type: 3}
       propertyPath: m_Name
       value: Brick (1)
@@ -1043,6 +1067,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 942726032}
     m_Modifications:
+    - target: {fileID: 1678514017768921817, guid: 6b97e5e4cd6b19640a75b40fec4a64de, type: 3}
+      propertyPath: powerUpPrefab
+      value: 
+      objectReference: {fileID: 5565206971344074104, guid: 9c9b276eb36c7554a99dace03f1c45f8, type: 3}
     - target: {fileID: 3196737277012728797, guid: 6b97e5e4cd6b19640a75b40fec4a64de, type: 3}
       propertyPath: m_Name
       value: Brick (9)
@@ -1105,6 +1133,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 431596365}
     m_Modifications:
+    - target: {fileID: 1678514017768921817, guid: 6b97e5e4cd6b19640a75b40fec4a64de, type: 3}
+      propertyPath: powerUpPrefab
+      value: 
+      objectReference: {fileID: 5565206971344074104, guid: 9c9b276eb36c7554a99dace03f1c45f8, type: 3}
     - target: {fileID: 3196737277012728797, guid: 6b97e5e4cd6b19640a75b40fec4a64de, type: 3}
       propertyPath: m_Name
       value: Brick (5)
@@ -1167,6 +1199,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 431596365}
     m_Modifications:
+    - target: {fileID: 1678514017768921817, guid: 6b97e5e4cd6b19640a75b40fec4a64de, type: 3}
+      propertyPath: powerUpPrefab
+      value: 
+      objectReference: {fileID: 5565206971344074104, guid: 9c9b276eb36c7554a99dace03f1c45f8, type: 3}
     - target: {fileID: 3196737277012728797, guid: 6b97e5e4cd6b19640a75b40fec4a64de, type: 3}
       propertyPath: m_Name
       value: Brick (2)
@@ -1287,6 +1323,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 431596365}
     m_Modifications:
+    - target: {fileID: 1678514017768921817, guid: 6b97e5e4cd6b19640a75b40fec4a64de, type: 3}
+      propertyPath: powerUpPrefab
+      value: 
+      objectReference: {fileID: 5565206971344074104, guid: 9c9b276eb36c7554a99dace03f1c45f8, type: 3}
     - target: {fileID: 3196737277012728797, guid: 6b97e5e4cd6b19640a75b40fec4a64de, type: 3}
       propertyPath: m_Name
       value: Brick (3)
@@ -2120,6 +2160,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 942726032}
     m_Modifications:
+    - target: {fileID: 1678514017768921817, guid: 6b97e5e4cd6b19640a75b40fec4a64de, type: 3}
+      propertyPath: powerUpPrefab
+      value: 
+      objectReference: {fileID: 5565206971344074104, guid: 9c9b276eb36c7554a99dace03f1c45f8, type: 3}
     - target: {fileID: 3196737277012728797, guid: 6b97e5e4cd6b19640a75b40fec4a64de, type: 3}
       propertyPath: m_Name
       value: Brick (6)
@@ -2239,6 +2283,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 431596365}
     m_Modifications:
+    - target: {fileID: 1678514017768921817, guid: 6b97e5e4cd6b19640a75b40fec4a64de, type: 3}
+      propertyPath: powerUpPrefab
+      value: 
+      objectReference: {fileID: 5565206971344074104, guid: 9c9b276eb36c7554a99dace03f1c45f8, type: 3}
     - target: {fileID: 3196737277012728797, guid: 6b97e5e4cd6b19640a75b40fec4a64de, type: 3}
       propertyPath: m_Name
       value: Brick
