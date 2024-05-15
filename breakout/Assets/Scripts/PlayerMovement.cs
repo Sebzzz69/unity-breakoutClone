@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] float speed = 5f; // Speed of the paddle movement
+    [SerializeField] float speed; // Speed of the paddle movement
 
     float screenSize;
 
