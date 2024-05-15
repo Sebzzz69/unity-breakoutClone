@@ -7,7 +7,7 @@ using UnityEngine;
 public class BrickLogic : MonoBehaviour
 {
     const int maxHealth = 3;
-    [SerializeField] int currentHealth;
+    public int currentHealth;
     int points;
 
     SpriteRenderer spriteRenderer;
