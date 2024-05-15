@@ -23,6 +23,14 @@ public class GameManager : MonoBehaviour
         NewGame();
     }
 
+    private void Update()
+    {
+        if(textScore != null)
+        {
+            textScore.text = score.ToString();
+        }
+    }
+
     void NewGame()
     {
         this.score = 0;
@@ -48,6 +56,7 @@ public class GameManager : MonoBehaviour
     public void TakeDamage()
     {
         this.playerHealth--;
+        textBall.text = playerHealth.ToString();
         FindObjectOfType<Ball>().Start();
     }
 
