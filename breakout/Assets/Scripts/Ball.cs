@@ -12,6 +12,8 @@ public class Ball : MonoBehaviour
     private void Awake()
     {
         this.rb = GetComponent<Rigidbody2D>();
+
+        FindObjectOfType<GameManager>().AttachUIText();
     }
 
     public void Start()

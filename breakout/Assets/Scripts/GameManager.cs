@@ -2,12 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
     [SerializeField] int playerHealth;
     [SerializeField] int score;
     int level;
+
+    Text textScore;
+    Text textBall;
 
 
     private void Awake()
@@ -33,6 +37,7 @@ public class GameManager : MonoBehaviour
         this.level = level;
 
         SceneManager.LoadScene("Level" + level);
+
     }
 
     public void HitBrick(BrickLogic brick)
@@ -44,6 +49,12 @@ public class GameManager : MonoBehaviour
     {
         this.playerHealth--;
         FindObjectOfType<Ball>().Start();
+    }
+
+    public void AttachUIText()
+    {
+        textScore = GameObject.Find("ScoreText").GetComponent<Text>();
+        textBall = GameObject.Find("BallText").GetComponent<Text>();
     }
 
 }
