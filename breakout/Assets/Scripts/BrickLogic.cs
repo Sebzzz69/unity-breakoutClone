@@ -8,7 +8,7 @@ public class BrickLogic : MonoBehaviour
 {
     const int maxHealth = 3;
     public int currentHealth;
-    int points;
+    int points = 100;
 
     SpriteRenderer spriteRenderer;
 
@@ -36,16 +36,18 @@ public class BrickLogic : MonoBehaviour
         switch (currentHealth)
         {
             case 3:
-                animator.Play("HitRed");
+                // REd dont give pints
+
                 points = 100;
+                animator.Play("HitRed");
                 break;
             case 2:
-                animator.Play("HitGreen");
                 points = 150;
+                animator.Play("HitGreen");
                 break;
             case 1:
-                animator.Play("HitBlue");
                 points = 200;
+                animator.Play("HitBlue");
                 break;
         }
     }
