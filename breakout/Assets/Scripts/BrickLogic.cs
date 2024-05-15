@@ -35,32 +35,18 @@ public class BrickLogic : MonoBehaviour
         // respektive färg
         switch (currentHealth)
         {
-            case 1:
-                points = 100;
-                animator.Play("HitGreen");
-                spriteRenderer.sprite = state[currentHealth - 3];
-                break;
-
-            case 2:
-                points = 150;
-                animator.Play("HitRed");
-                spriteRenderer.sprite = state[currentHealth - 2];
-
-                break;
-
             case 3:
-                points = 200;
-                spriteRenderer.sprite = state[currentHealth - 1];
+                animator.Play("HitRed");
+                points = 100;
                 break;
-
-            default:
+            case 2:
+                animator.Play("HitGreen");
+                points = 150;
+                break;
+            case 1:
                 animator.Play("HitBlue");
-                Destroy(this.gameObject);
+                points = 200;
                 break;
-        }
-        switch (currentHealth)
-        {
-            //Gör om, gör rätt, din fitta
         }
     }
 
@@ -69,8 +55,8 @@ public class BrickLogic : MonoBehaviour
         if (collision.gameObject.CompareTag("Ball"))
         {
             FindObjectOfType<GameManager>().HitBrick(this);
-            currentHealth--;
             Hit();
+            currentHealth--;
         }
 
     }
