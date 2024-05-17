@@ -34,4 +34,20 @@ public class PlayerMovement : MonoBehaviour
         // Apply the new position to the paddle
         transform.position = newPosition;
     }
+
+
+   /* public void HandlePowerUp(string powerUpType)
+    {
+        // Logic for what happens when the player picks up a power-up
+        switch (powerUpType)
+        {
+            case "Speed":
+                // Increase player speed
+                break;
+            case "Health":
+                // Increase player health
+                break;
+                // Add more cases for different types of power-ups as needed
+        }
+    }*/
 }
