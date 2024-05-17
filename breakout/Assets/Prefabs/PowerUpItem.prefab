@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4832451782337212149}
   - component: {fileID: 8786984835940751380}
   - component: {fileID: 7036178702926775175}
+  - component: {fileID: 7235950439458243012}
   - component: {fileID: 4556552917633939163}
   m_Layer: 0
   m_Name: PowerUpItem
@@ -99,6 +100,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
+--- !u!114 &7235950439458243012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5565206971344074104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64aeb4eaefc8a5d4e94bafa858e749f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  powerUpType: 
 --- !u!50 &4556552917633939163
 Rigidbody2D:
   serializedVersion: 4

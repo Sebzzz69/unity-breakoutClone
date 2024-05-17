@@ -29,7 +29,7 @@ public class AnimationEventHandler : MonoBehaviour
     {
        GenerateRandomNumber();
 
-        if (randomInt == 1)
+        //if (randomInt == 1)
             SpawnPowerUp();
         Debug.Log(randomInt);
 
