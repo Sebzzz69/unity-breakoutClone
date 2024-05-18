@@ -14,12 +14,12 @@ public class GameManager : MonoBehaviour
     TMP_Text textBall;
 
     GameObject gameOverScreen;
-
+    GameObject pauseScreen;
 
     private void Awake()
     {
         AttachUIText();
-        AttachGameOverScreen();
+        AttachUIScreens();
     }
     void Start()
     {
@@ -35,8 +35,17 @@ public class GameManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Return))
         {
+
+            if (pauseScreen.activeSelf == true)
+            {
+                Time.timeScale = 1;
+                pauseScreen.SetActive(false);
+                return;
+            }
+
             Time.timeScale = 0;
-            gameOverScreen.SetActive(true);
+            pauseScreen.SetActive(true);
+
         }
 
     }
@@ -74,10 +83,16 @@ public class GameManager : MonoBehaviour
         textBall = GameObject.Find("BallTxt").GetComponent<TMP_Text>();
     }
 
-    private void AttachGameOverScreen()
+
+    // TODO::
+    // Make ui handler object for this
+    private void AttachUIScreens()
     {
         gameOverScreen = GameObject.FindGameObjectWithTag("GameOverScreen");
         gameOverScreen.SetActive(false);
+
+        pauseScreen = GameObject.FindGameObjectWithTag("PauseScreen");
+        pauseScreen.SetActive(false);
     }
 
 

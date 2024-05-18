@@ -9,6 +9,7 @@ TagManager:
   - Ball
   - WallOfDeath
   - GameOverScreen
+  - PauseScreen
   layers:
   - Default
   - TransparentFX
