@@ -6,14 +6,20 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] float speed; // Speed of the paddle movement
+    [SerializeField] int speed; // Speed of the paddle movement
 
     float screenSize;
 
-    private void Start()
+    Animator animator;
+
+
+    private void Awake()
     {
         screenSize = Camera.main.orthographicSize;
-
+    }
+    private void Start()
+    {
+        animator = GetComponent<Animator>();
     }
     // Update is called once per frame
     void Update()
@@ -24,6 +30,27 @@ public class PlayerMovement : MonoBehaviour
 
         // Calculate movement amount based on input and speed
         float moveAmount = moveInput * speed * Time.deltaTime;
+
+
+
+
+        #region Animation handler
+        if (moveInput > 0)
+        {
+            gameObject.transform.localScale = Vector3.one;
+            animator.Play("PlayerWalking");
+        }
+        else if (moveInput < 0) 
+        {
+            gameObject.transform.localScale = new Vector3 (-1, 1, 1);
+            animator.Play("PlayerWalking");
+        }
+        else
+        {
+            gameObject.transform.localScale = Vector3.one;
+            animator.Play("PlayerIdle");
+        }
+        #endregion
 
         // Calculate new position
         Vector3 newPosition = transform.position + new Vector3(moveAmount, 0f, 0f);
@@ -36,7 +63,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
 
-   /* public void HandlePowerUp(string powerUpType)
+    public void HandlePowerUp(string powerUpType)
     {
         // Logic for what happens when the player picks up a power-up
         switch (powerUpType)
@@ -49,5 +76,17 @@ public class PlayerMovement : MonoBehaviour
                 break;
                 // Add more cases for different types of power-ups as needed
         }
-    }*/
+    }
+
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Ball"))
+        {
+            Debug.Log("psps");
+            animator.Play("PlayerSwing");
+        }
+    }
+
+
 }
