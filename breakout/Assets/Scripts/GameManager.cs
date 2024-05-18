@@ -10,8 +10,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] int playerHealth;
     [SerializeField] int score;
 
-    TMP_Text textScore;
-    TMP_Text textBall;
+    [SerializeField] TMP_Text textScore;
+    [SerializeField] TMP_Text textBall;
 
     GameObject gameOverScreen;
     GameObject pauseScreen;
@@ -30,6 +30,7 @@ public class GameManager : MonoBehaviour
     {
         if(textScore != null)
         {
+            Debug.Log("Found textscore");
             textScore.text = "Score: " + score.ToString();
         }
 
