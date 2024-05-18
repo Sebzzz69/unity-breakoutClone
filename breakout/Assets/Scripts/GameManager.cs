@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -8,15 +9,17 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] int playerHealth;
     [SerializeField] int score;
-    int level;
 
-    Text textScore;
-    Text textBall;
+    TMP_Text textScore;
+    TMP_Text textBall;
+
+    GameObject gameOverScreen;
 
 
     private void Awake()
     {
-        DontDestroyOnLoad(this.gameObject);
+        AttachUIText();
+        AttachGameOverScreen();
     }
     void Start()
     {
@@ -27,26 +30,24 @@ public class GameManager : MonoBehaviour
     {
         if(textScore != null)
         {
-            textScore.text = score.ToString();
+            textScore.text = "Score: " + score.ToString();
         }
+
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            Time.timeScale = 0;
+            gameOverScreen.SetActive(true);
+        }
+
     }
 
     void NewGame()
     {
         this.score = 0;
-        this.level = 3;
         this.playerHealth = 3;
-
-        LoadLevel(1);
     }
 
-    void LoadLevel(int level)
-    {
-        this.level = level;
-
-        SceneManager.LoadScene("Level" + level);
-
-    }
+    
 
     public void HitBrick(BrickLogic brick)
     {
@@ -55,15 +56,29 @@ public class GameManager : MonoBehaviour
 
     public void TakeDamage()
     {
+
+        if (playerHealth <= 0)
+        {
+            Time.timeScale = 0;
+            gameOverScreen.SetActive(true);
+        }
+
         this.playerHealth--;
         textBall.text = playerHealth.ToString();
         FindObjectOfType<Ball>().Start();
     }
 
-    public void AttachUIText()
+    private void AttachUIText()
     {
-        textScore = GameObject.Find("ScoreText").GetComponent<Text>();
-        textBall = GameObject.Find("BallText").GetComponent<Text>();
+        textScore = GameObject.Find("ScoreTxt").GetComponent<TMP_Text>();
+        textBall = GameObject.Find("BallTxt").GetComponent<TMP_Text>();
     }
+
+    private void AttachGameOverScreen()
+    {
+        gameOverScreen = GameObject.FindGameObjectWithTag("GameOverScreen");
+        gameOverScreen.SetActive(false);
+    }
+
 
 }
