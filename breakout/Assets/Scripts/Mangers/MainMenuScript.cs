@@ -5,7 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuScript : MonoBehaviour
 {
-    public void PlayGame1()
+
+    public GameObject creditPanel;
+
+    public void PlayGame()
     {
         SceneManager.LoadSceneAsync("Level1");
     }
@@ -13,5 +16,15 @@ public class MainMenuScript : MonoBehaviour
     public void QuitTheShit()
     {
         Application.Quit();
+    }
+
+    public void ShowCreditScreen()
+    {
+        creditPanel.SetActive(true);
+    }
+
+    public void HideCreditScreen()
+    {
+        creditPanel.SetActive(false);
     }
 }
