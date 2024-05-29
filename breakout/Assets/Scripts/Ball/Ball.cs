@@ -13,7 +13,6 @@ public class Ball : MonoBehaviour
     {
         this.rb = GetComponent<Rigidbody2D>();
 
-        FindObjectOfType<GameManager>().AttachUIText();
     }
 
     public void Start()
@@ -29,7 +28,7 @@ public class Ball : MonoBehaviour
         direction.x = Random.Range(-1f, 1f);
         direction.y = 1f;
 
-        this.rb.AddForce(direction.normalized * this.speed);
+        this.rb.AddForce(direction.normalized * this.speed * Time.deltaTime * 100);
     } 
 
     private void OnCollisionEnter2D(Collision2D collision)

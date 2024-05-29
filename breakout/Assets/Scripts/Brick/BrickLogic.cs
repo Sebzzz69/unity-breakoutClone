@@ -63,6 +63,16 @@ public class BrickLogic : MonoBehaviour
 
     }
 
+    /*private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Ball"))
+        {
+            FindObjectOfType<GameManager>().HitBrick(this);
+            Hit();
+            currentHealth--;
+        }
+    }*/
+
     public int GetPoints()
     {
         return this.points;
