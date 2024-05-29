@@ -102,6 +102,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentHealth: 0
+  powerUp: 0
   state:
   - {fileID: 21300000, guid: ae5156ff51b671344acc24048188b985, type: 3}
   - {fileID: 21300000, guid: 46f4791483e3b9e48aed4312feef0888, type: 3}

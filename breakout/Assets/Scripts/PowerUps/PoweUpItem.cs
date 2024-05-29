@@ -7,6 +7,8 @@ public class PoweUpItem : MonoBehaviour
     public float speed = 2f; // Speed of the falling item
     private Rigidbody2D rb;
 
+    public BrickLogic[] brickLogic;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -21,18 +23,28 @@ public class PoweUpItem : MonoBehaviour
     // You can add collision logic here if you want the item to do something when the player picks it up
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Paddle"))
         {
-            // Example: Increase player's health
-            PlayerMovement player = other.GetComponent<PlayerMovement>();
-            if (player != null)
-            {
-                
-                Debug.Log("logik power up"); //LOGIK!!
-            }
+            brickLogic = FindObjectsOfType<BrickLogic>();
+            //Debug.Log("PowerItem destroyed, collided with player");
 
-            // Destroy the power-up item
-            Destroy(gameObject);
+            
+            foreach (BrickLogic b in brickLogic)
+            {
+                if (brickLogic != null && !b.powerUp)
+                {
+                    b.powerUp = true;
+                    //Debug.Log("PowerUp bool set-to");
+                }
+
+                b.IsTriggerPower();
+
+                // Destroy the power-up item
+                Destroy(gameObject);
+            }
+            
+
+            
         }
     }
 }

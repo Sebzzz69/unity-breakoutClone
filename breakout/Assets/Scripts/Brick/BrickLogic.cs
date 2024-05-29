@@ -10,6 +10,10 @@ public class BrickLogic : MonoBehaviour
     public int currentHealth;
     int points = 100;
 
+    public bool powerUp = false;
+    private CircleCollider2D objectCollider;
+
+
     SpriteRenderer spriteRenderer;
 
     [SerializeField] Sprite[] state;
@@ -21,11 +25,15 @@ public class BrickLogic : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
-
+    private void Update()
+    {
+        //Debug.Log("powerUp bool set: " + powerUp);
+    }
 
     private void Start()
     {
         currentHealth = maxHealth;
+        powerUp = false;
     }
 
 
@@ -52,18 +60,34 @@ public class BrickLogic : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
+
+    
+
+   private void OnCollisionEnter2D(Collision2D collision)
+   {
         if (collision.gameObject.CompareTag("Ball"))
         {
+           
             FindObjectOfType<GameManager>().HitBrick(this);
             Hit();
             currentHealth--;
         }
 
+   }
+
+    public void IsTriggerPower()
+    {
+        //objectCollider = GetComponent<Collider2D>();
+        objectCollider = GetComponent<CircleCollider2D>();
+
+        if (powerUp == true)
+        {
+            Debug.Log("IsTrigger method triggerd");
+            objectCollider.isTrigger = true;
+        }
     }
 
-    /*private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Ball"))
         {
@@ -71,7 +95,7 @@ public class BrickLogic : MonoBehaviour
             Hit();
             currentHealth--;
         }
-    }*/
+    }
 
     public int GetPoints()
     {

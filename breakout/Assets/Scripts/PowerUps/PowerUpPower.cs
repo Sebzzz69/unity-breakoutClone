@@ -5,29 +5,20 @@ using UnityEngine;
 
 public class PowerUpPower : MonoBehaviour
 {
+    //This script is rn useless XD
+
+    
 
 
-    private void OnTriggerEnter2D(Collider2D collision)
+
+    /*private void OnTriggerEnter2D(Collider2D collision)
     {
-
-
-
-        Debug.Log("collided with powerUp");
-        // Check if the object collided with has a specific tag
         if (collision.gameObject.CompareTag("Paddle"))
         {
-
-
-
-
-
-
-
-
-            Destroy(this.gameObject);
-
+             // Directly setting the public variable
+           Debug.Log("bool set to true");
         }
-    }
+    }*/
 }
 
 

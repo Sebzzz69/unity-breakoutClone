@@ -18,7 +18,7 @@ public class AnimationEventHandler : MonoBehaviour
     {
 
         // Check if powerUpPrefab is assigned
-        if (powerUpPrefab != null)
+        if (randomInt == 8)
         {
             // Spawn the power-up at the current position
             Instantiate(powerUpPrefab, transform.position, Quaternion.identity);

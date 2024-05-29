@@ -43,7 +43,7 @@ public class BallCollider : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("unntriggerd");
+            //Debug.Log("unntriggerd");
 
             // Reset velocity when exiting the trigger collider
             //rb.velocity = Vector2.zero;
