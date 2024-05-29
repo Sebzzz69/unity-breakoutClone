@@ -206,9 +206,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1425800602}
-        m_TargetAssemblyTypeName: HighScoreUI, Assembly-CSharp
-        m_MethodName: HidePanel
+      - m_Target: {fileID: 1425800604}
+        m_TargetAssemblyTypeName: MainMenuScript, Assembly-CSharp
+        m_MethodName: HideCreditScreen
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -565,7 +565,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &671133524
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1520,6 +1520,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c0f40da6f9753a469b0dab3641759b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creditPanel: {fileID: 671133523}
 --- !u!20 &1435305576 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 4605991667456394425, guid: 9f9e34127f8ac6246b088f1c3c481997, type: 3}
@@ -1607,9 +1608,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1425800602}
-        m_TargetAssemblyTypeName: HighScoreUI, Assembly-CSharp
-        m_MethodName: ShowPanel
+      - m_Target: {fileID: 1425800604}
+        m_TargetAssemblyTypeName: MainMenuScript, Assembly-CSharp
+        m_MethodName: ShowCreditScreen
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
