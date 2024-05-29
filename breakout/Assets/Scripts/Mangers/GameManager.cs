@@ -30,7 +30,7 @@ public class GameManager : MonoBehaviour
     {
         if(textScore != null)
         {
-            Debug.Log("Found textscore");
+            //Debug.Log("Found textscore");
             textScore.text = "Score: " + score.ToString();
         }
 
@@ -94,6 +94,12 @@ public class GameManager : MonoBehaviour
 
         pauseScreen = GameObject.FindGameObjectWithTag("PauseScreen");
         pauseScreen.SetActive(false);
+    }
+
+
+    public int GetScore()
+    {
+        return score;
     }
 
 

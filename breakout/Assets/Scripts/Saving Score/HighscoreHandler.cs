@@ -8,6 +8,10 @@ public class HighscoreHandler : MonoBehaviour
     [SerializeField] int maxCount = 7;
     [SerializeField] string filename;
 
+    public delegate void OnHighscoreListChanged(List<HighscoreElement> list);
+    public static event OnHighscoreListChanged onHighscoreListChanged;
+
+
 
     private void Start()
     {
@@ -22,6 +26,12 @@ public class HighscoreHandler : MonoBehaviour
         {
             highscoreList.RemoveAt(maxCount);
         }
+
+        if (onHighscoreListChanged != null)
+        {
+            onHighscoreListChanged.Invoke(highscoreList);
+        }
+
     }
 
     private void SaveHighScore()
@@ -44,6 +54,12 @@ public class HighscoreHandler : MonoBehaviour
                 }
 
                 SaveHighScore();
+
+                if (onHighscoreListChanged != null)
+                {
+                    onHighscoreListChanged.Invoke(highscoreList);
+                }
+
                 break;
             }
         }
