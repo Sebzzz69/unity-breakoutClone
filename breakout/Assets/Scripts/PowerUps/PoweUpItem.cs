@@ -27,6 +27,7 @@ public class PoweUpItem : MonoBehaviour
             PlayerMovement player = other.GetComponent<PlayerMovement>();
             if (player != null)
             {
+                
                 Debug.Log("logik power up"); //LOGIK!!
             }
 
