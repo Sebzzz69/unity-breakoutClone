@@ -13,6 +13,11 @@ public class MainMenuScript : MonoBehaviour
         SceneManager.LoadSceneAsync("Level1");
     }
 
+    public void MainMenu()
+    {
+        SceneManager.LoadSceneAsync("MainMenu");
+    }
+
     public void QuitTheShit()
     {
         Application.Quit();
