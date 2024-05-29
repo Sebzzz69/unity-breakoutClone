@@ -1,18 +1,33 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PowerUpPower : MonoBehaviour
 {
-    // This method is called when the object collides with another object with a collider
-    private void OnCollisionEnter(Collision collision)
+
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("collided");
+
+
+
+        Debug.Log("collided with powerUp");
         // Check if the object collided with has a specific tag
         if (collision.gameObject.CompareTag("Paddle"))
         {
-            Debug.Log("Collided with object with tag 'YourTag'");
-            // Do something when collision occurs with an object with the specified tag
+
+
+
+
+
+
+
+
+            Destroy(this.gameObject);
+
         }
     }
 }
+
+
