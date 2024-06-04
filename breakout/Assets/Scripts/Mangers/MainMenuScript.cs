@@ -10,11 +10,13 @@ public class MainMenuScript : MonoBehaviour
 
     public void PlayGame()
     {
+        Debug.LogWarning("Level1");
         SceneManager.LoadSceneAsync("Level1");
     }
 
     public void MainMenu()
     {
+        Debug.Log("MainMenu");
         SceneManager.LoadSceneAsync("MainMenu");
     }
 

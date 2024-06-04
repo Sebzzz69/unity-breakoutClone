@@ -25,6 +25,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         NewGame();
+        Time.timeScale = 1;
     }
 
     private void Update()
@@ -40,6 +41,13 @@ public class GameManager : MonoBehaviour
 
             if (pauseScreen.activeSelf == true)
             {
+                if (Input.GetKeyDown(KeyCode.Space)) 
+                {
+                    SceneManager.LoadSceneAsync("MainMenu");
+                    return;
+                }
+
+
                 Time.timeScale = 1;
                 pauseScreen.SetActive(false);
                 return;
