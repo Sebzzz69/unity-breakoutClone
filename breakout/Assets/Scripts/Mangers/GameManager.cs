@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
 
     GameObject gameOverScreen;
     GameObject pauseScreen;
+    GameObject saveScoreScreen;
 
     private void Awake()
     {
@@ -100,6 +101,9 @@ public class GameManager : MonoBehaviour
     {
         gameOverScreen = GameObject.FindGameObjectWithTag("GameOverScreen");
         gameOverScreen.SetActive(false);
+
+        saveScoreScreen = GameObject.FindGameObjectWithTag("SaveScoreScreen");
+        saveScoreScreen.SetActive(false);
 
         pauseScreen = GameObject.FindGameObjectWithTag("PauseScreen");
         pauseScreen.SetActive(false);

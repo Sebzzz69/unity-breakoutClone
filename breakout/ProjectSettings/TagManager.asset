@@ -10,6 +10,7 @@ TagManager:
   - WallOfDeath
   - GameOverScreen
   - PauseScreen
+  - SaveScoreScreen
   layers:
   - Default
   - TransparentFX

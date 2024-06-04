@@ -1,22 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class SavingScore : MonoBehaviour
 {
 
     [SerializeField] HighscoreHandler highscoreHandler;
+    [SerializeField] TMP_InputField playerID;
 
 
     private int score;
-    public string playerName;
 
 
     public void SaveScore()
     {
 
         score = FindAnyObjectByType<GameManager>().GetScore();
-
+        string playerName = playerID.text;
         SendScore(playerName, score);
     }
 

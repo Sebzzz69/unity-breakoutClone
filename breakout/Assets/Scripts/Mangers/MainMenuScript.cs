@@ -7,6 +7,7 @@ public class MainMenuScript : MonoBehaviour
 {
 
     public GameObject creditPanel;
+    public GameObject saveScorePanel;
 
     public void PlayGame()
     {
@@ -33,5 +34,11 @@ public class MainMenuScript : MonoBehaviour
     public void HideCreditScreen()
     {
         creditPanel.SetActive(false);
+    }
+
+    public void ShowSaveScoreScreen()
+    {
+        saveScorePanel.SetActive(true);
+        GameObject.FindGameObjectWithTag("GameOverScreen").SetActive(false);
     }
 }
