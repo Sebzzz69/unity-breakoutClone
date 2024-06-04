@@ -31,7 +31,7 @@ public class AnimationEventHandler : MonoBehaviour
 
         //if (randomInt == 1)
             SpawnPowerUp();
-        Debug.Log(randomInt);
+       // Debug.Log(randomInt);
 
         Destroy(gameObject);
     }

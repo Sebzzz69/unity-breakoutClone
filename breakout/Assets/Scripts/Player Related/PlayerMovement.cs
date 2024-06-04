@@ -10,7 +10,13 @@ public class PlayerMovement : MonoBehaviour
 
     float screenSize;
 
-    Animator animator;
+    public Animator animator;
+
+    public float timerDuration = 1.0f;
+    public bool shittery = false;
+
+   /* public float runSpeed = 40f;
+    float horizontalMove = 0f;*/
 
 
     private void Awake()
@@ -20,10 +26,58 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {
         animator = GetComponent<Animator>();
+        
     }
+
+    private IEnumerator TimerCoroutine()
+    {
+        yield return new WaitForSeconds(timerDuration);
+
+        BallSwing();
+        shittery = false;
+    }
+
+    private void BallSwing()
+    {
+        animator.SetBool("ballHit", false);
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        
+
+        if (collision.gameObject.CompareTag("Ball"))
+        {
+            Debug.Log("jag hatar mitt fucking liv, snälla gör ett bättre movement script nästa gång även om det inte kommer bli en nästa gång. Jag hatar unity animation controller, jag hatar unity animation system, jag hatar mig själv. kl är 00:20 och jag vill bara vara klar med detta så jag känner mig uppfylld och tillräcklig till resten av personerna på projektet");
+           
+            animator.SetBool("ballHit", true);
+            shittery = true;
+        }
+       
+    }
+
+
+    void PlaySwingAnimation()
+    {
+        if (animator != null)
+        {
+            animator.Play("PlayerSwing");
+
+            Debug.Log("Swing anim");
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
+        
+        if (shittery)
+        {
+            //StartCoroutine(TimerCoroutine());
+            //animator.SetBool("ballHit", false);
+            shittery = false;
+            
+        }
 
         // Get input from arrow keys or A/D keys
         float moveInput = Input.GetAxis("Horizontal");
@@ -31,7 +85,7 @@ public class PlayerMovement : MonoBehaviour
         // Calculate movement amount based on input and speed
         float moveAmount = moveInput * speed * Time.deltaTime;
 
-
+       
 
 
         #region Animation handler
@@ -39,17 +93,32 @@ public class PlayerMovement : MonoBehaviour
         {
             gameObject.transform.localScale = Vector3.one;
             animator.Play("PlayerWalking");
+            animator.SetBool("isRunning", true);
+            animator.SetBool("ballHit", false);
+
+
+
         }
         else if (moveInput < 0) 
         {
             gameObject.transform.localScale = new Vector3 (-1, 1, 1);
             animator.Play("PlayerWalking");
+            animator.SetBool("isRunning", true);
+            animator.SetBool("ballHit", false);
         }
-        else
+        else 
+        {
+            animator.SetBool("isRunning", false);
+
+        }
+        /*else
         {
             gameObject.transform.localScale = Vector3.one;
             animator.Play("PlayerIdle");
-        }
+        }*/
+
+        
+
         #endregion
 
         // Calculate new position
@@ -63,30 +132,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
 
-    public void HandlePowerUp(string powerUpType)
-    {
-        // Logic for what happens when the player picks up a power-up
-        switch (powerUpType)
-        {
-            case "Speed":
-                // Increase player speed
-                break;
-            case "Health":
-                // Increase player health
-                break;
-                // Add more cases for different types of power-ups as needed
-        }
-    }
-
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Ball"))
-        {
-            Debug.Log("psps");
-            animator.Play("PlayerSwing");
-        }
-    }
+    
 
 
 }
