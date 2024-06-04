@@ -48,7 +48,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Ball"))
         {
-            Debug.Log("jag hatar mitt fucking liv, snälla gör ett bättre movement script nästa gång även om det inte kommer bli en nästa gång. Jag hatar unity animation controller, jag hatar unity animation system, jag hatar mig själv. kl är 00:20 och jag vill bara vara klar med detta så jag känner mig uppfylld och tillräcklig till resten av personerna på projektet");
+            //Debug.Log("jag hatar mitt fucking liv, snälla gör ett bättre movement script nästa gång även om det inte kommer bli en nästa gång. Jag hatar unity animation controller, jag hatar unity animation system, jag hatar mig själv. kl är 00:20 och jag vill bara vara klar med detta så jag känner mig uppfylld och tillräcklig till resten av personerna på projektet");
            
             animator.SetBool("ballHit", true);
             shittery = true;
